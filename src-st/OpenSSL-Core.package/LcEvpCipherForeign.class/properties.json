@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "FFIOpaqueObject",
+	"category" : "OpenSSL-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LcEvpCipherForeign",
+	"type" : "normal"
+}

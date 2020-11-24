@@ -6,6 +6,8 @@ initializeTypeMap
 		BIO		      		#LcBIOForeign
 		BIGNUM	     		#LcBNForeign
 		ENGINE	     		#LcEngineForeign
+		EVP_CIPHER 		#LcEvpCipherForeign
+		EVP_CIPHER_CTX 	#LcEvpCipherForeign
 		EVP_MD	     		#LcEvpMdForeign
 		EVP_MD_CTX	     #LcEvpMdCtxForeign
 		EVP_PKEY	     	#LcEvpPkeyForeign

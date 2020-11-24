@@ -1,4 +1,4 @@
-as yet unclassified
+API - Random
 randomPrivateBytes: aByteArray
 	"Fill the supplied ByteArray with random public bytes."
 
