@@ -1,5 +1,5 @@
 tests
-aesGcmEncrypt
+testAesGcmEncrypt
 	| tag1 ctx outlen outbuf libCrypto status null |
 
 	libCrypto := LcLibCrypto uniqueInstance.
