@@ -5,7 +5,14 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"key",
+		"initializationVector",
+		"plainText",
+		"aditionalAutneticatedData",
+		"cipherText",
+		"tag"
+	],
 	"name" : "LcEvpAesGcm",
 	"type" : "normal"
 }

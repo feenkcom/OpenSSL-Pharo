@@ -4,5 +4,5 @@ apiEvpEncryptInit: ctx type: type engine: impl key: key iv: iv
          ENGINE *impl, const unsigned char *key, const unsigned char *iv)"
 
 	^ self ffiCall: #(int EVP_EncryptInit_ex (EVP_CIPHER_CTX *ctx, const EVP_CIPHER *type,
-         ENGINE *impl, char *key, char *iv)) 
+         ENGINE *impl, char *key, char *iv))
 		module: self library
