@@ -1,0 +1,1 @@
+LcAesCbc256EncryptedContent holds the result of encrypting a buffer with ${method:name=LcLibCrypto>>#aesCbc256Encrypt:withKey:}$

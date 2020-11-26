@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "AlistairGrant 11/25/2020 11:05",
+	"commentStamp" : "AlistairGrant 11/25/2020 09:42",
 	"super" : "TestCase",
 	"category" : "OpenSSL-Tests-EVP",
 	"classinstvars" : [ ],
@@ -9,8 +9,10 @@
 		"key",
 		"initializationVector",
 		"plainText",
-		"cipherText"
+		"cipherText",
+		"tag",
+		"additionalAuthenticatedData"
 	],
-	"name" : "LcEvpAesCbc",
+	"name" : "LcEvpAesGcmTest",
 	"type" : "normal"
 }

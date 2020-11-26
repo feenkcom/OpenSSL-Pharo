@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "AlistairGrant 11/26/2020 09:28",
+	"super" : "Object",
+	"category" : "OpenSSL-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"content",
+		"initializationVector"
+	],
+	"name" : "LcEncryptedContent",
+	"type" : "normal"
+}
