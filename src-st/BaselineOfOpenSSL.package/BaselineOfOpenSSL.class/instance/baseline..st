@@ -13,4 +13,5 @@ baseline: spec
 			package: 'OpenSSL-Tests-BigNum';
 			package: 'OpenSSL-Tests-RSA';
 			package: 'OpenSSL-Tests-EVP';
+			package: 'OpenSSL-Tests-Random';
 			package: 'OpenSSL-Tests-X509' ]
