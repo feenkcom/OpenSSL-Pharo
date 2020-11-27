@@ -2,8 +2,8 @@ tests
 testSerialization
 	| encryptedContent serialized deserialized decryptedBuffer |
 
-	encryptedContent := LcLibCrypto uniqueInstance
-		aesCbc256Encrypt: plainText withKey: key.
+	encryptedContent := LcAesCbc256EncryptedContent initializationVector: initializationVector.
+	encryptedContent encrypt: plainText withKey: key.
 
 	serialized := encryptedContent asByteArray.
 	deserialized := LcAesCbc256EncryptedContent fromStream: serialized readStream.

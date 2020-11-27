@@ -2,8 +2,9 @@ tests
 testAesGcm256RoundTrip
 	| encryptedContent decryptedBuffer |
 
-	encryptedContent := LcLibCrypto uniqueInstance
-		aesGcm256Encrypt: plainText withKey: key.
+	encryptedContent := LcAesGcm256EncryptedContent new
+								encrypt: plainText withKey: key;
+								yourself.
 
 	decryptedBuffer := encryptedContent decryptWith: key.
 

@@ -2,8 +2,9 @@ tests
 testAesCbc256RoundTrip
 	| encryptedContent decryptedBuffer |
 
-	encryptedContent := LcLibCrypto uniqueInstance
-		aesCbc256Encrypt: plainText withKey: key.
+	encryptedContent := (LcAesCbc256EncryptedContent initializationVector: initializationVector)
+								encrypt: plainText withKey: key;
+								yourself.
 
 	decryptedBuffer := encryptedContent decryptWith: key.
 
