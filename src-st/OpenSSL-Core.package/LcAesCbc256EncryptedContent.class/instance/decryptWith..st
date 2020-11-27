@@ -38,9 +38,9 @@ decryptWith: aKey
 		to: outlen
 		with: outbuf
 		startingAt: 1.
-	outbuf
+	result
 		replaceFrom: outlen + 1
-		to: outlen + finallen + 1
+		to: outlen + finallen
 		with: finalbuf
 		startingAt: 1.
 
