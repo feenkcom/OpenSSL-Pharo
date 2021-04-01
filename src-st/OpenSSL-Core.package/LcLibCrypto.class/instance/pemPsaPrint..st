@@ -1,5 +1,5 @@
 private - API - PEM
-pemPSAPrint: anRSA
+pemPsaPrint: anRSA
 	| nullp bio out |
 	
 	nullp := FFIExternalObject new.
