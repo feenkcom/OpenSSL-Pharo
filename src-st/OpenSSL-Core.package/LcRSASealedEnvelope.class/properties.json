@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "LcEncryptedContent",
+	"category" : "OpenSSL-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"encryptedSecret"
+	],
+	"name" : "LcRSASealedEnvelope",
+	"type" : "normal"
+}
