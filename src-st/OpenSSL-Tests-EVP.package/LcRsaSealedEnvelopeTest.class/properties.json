@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "OpenSSL-Tests-EVP",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"plainText",
+		"publicKey",
+		"privateKey"
+	],
+	"name" : "LcRsaSealedEnvelopeTest",
+	"type" : "normal"
+}

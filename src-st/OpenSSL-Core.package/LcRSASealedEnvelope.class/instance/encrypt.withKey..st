@@ -5,6 +5,7 @@ encrypt: aByteArray withKey: anRsaPublicKey
 	  outputBuffer outputBufferLength outputLength
 	  finalBuffer finalBufferLength finalLength
 	  status libCrypto |
+	
 	self assert: [ aByteArray notNil ].
 	self assert: [ anRsaPublicKey  notNil ].
 	self assert: [ content isNil ].
@@ -28,25 +29,16 @@ encrypt: aByteArray withKey: anRsaPublicKey
 	status := libCrypto 
 		apiEvpSealInit: ctx 
 		with: libCrypto evpAes256Cbc 
-		with: encryptedKeyBuffer pointer
+		with: encryptedKeyBuffer 
 		with: encryptedKeyBufferLength 
 		with: initializationVector 
 		with: evpPublicKey handle handle
 		with: 1.
 	self assert: status equals: 1.
+	
 	encryptedKeyLength := encryptedKeyBufferLength unsignedLongLongAt: 1.
-	encryptedSecret := ByteArray new: encryptedKeyLength.
-	content
-		replaceFrom: 1
-		to: encryptedKeyLength
-		with: encryptedKeyBuffer
-		startingAt: 1.
-	"if(1 != EVP_SealInit(ctx, EVP_aes_256_cbc(), encrypted_key,
-		encrypted_key_len, iv, pub_key, 1))
-		handleErrors();"
-	"int EVP_SealInit(EVP_CIPHER_CTX *ctx, const EVP_CIPHER *type,
-                  unsigned char **ek, int *ekl, unsigned char *iv,
-                  EVP_PKEY **pubk, int npubk);"
+	encryptedSecret := (FFIExternalArray fromHandle: encryptedKeyBuffer type: 'uchar' size: encryptedKeyLength) asByteArray.
+	encryptedKeyBuffer free.
 	
 	outputBuffer := ByteArray new: aByteArray size + 1 + LcEvpConstants EVP_MAX_IV_LENGTH value.
 	outputBufferLength := ByteArray new: 8.
@@ -55,17 +47,14 @@ encrypt: aByteArray withKey: anRsaPublicKey
 	
 	"Provide the message to be encrypted, and obtain the encrypted output."
 	status := libCrypto 
-		apiEvpSealUpdate: ctx 
-		with: outputBuffer 
-		with: outputBufferLength 
-		with: aByteArray 
-		with: aByteArray size.
+		apiEvpEncryptUpdate: ctx 
+		out: outputBuffer 
+		outlen: outputBufferLength 
+		in: aByteArray 
+		inlen: aByteArray size.
 	self assert: status equals: 1.
 	outputLength := outputBufferLength unsignedLongLongAt: 1.
 	self assert: outputLength < outputBuffer size.
-	"if(1 != EVP_SealUpdate(ctx, ciphertext, &len, plaintext, plaintext_len))
-		handleErrors();
-	ciphertext_len = len;"
 	
 	"Finalise the encryption. Further ciphertext bytes may be written at this stage."
 	status := libCrypto 
@@ -91,4 +80,3 @@ encrypt: aByteArray withKey: anRsaPublicKey
 		startingAt: 1.
 	
 	^ content
-	
