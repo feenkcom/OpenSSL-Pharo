@@ -2,17 +2,18 @@ initialization
 initializeTypeMap
 
 	TypeMap := Dictionary newFromPairs: #(
-		BIO_METHOD   		#FFIOpaqueObject
+		ASN1_PCTX			#FFIOpaqueObject
+		BIO_METHOD   	#FFIOpaqueObject
 		BIO		      		#LcBIOForeign
 		BIGNUM	     		#LcBNForeign
 		ENGINE	     		#LcEngineForeign
 		EVP_CIPHER 		#LcEvpCipherForeign
 		EVP_CIPHER_CTX 	#LcEvpCipherForeign
 		EVP_MD	     		#LcEvpMdForeign
-		EVP_MD_CTX	     #LcEvpMdCtxForeign
+		EVP_MD_CTX	   #LcEvpMdCtxForeign
 		EVP_PKEY	     	#LcEvpPkeyForeign
 		EVP_PKEY_CTX	  	#LcEvpPkeyCtxForeign
 		RSA	     			#LcRSAForeign	
-		X509_REQ				#LcX509ReqForeign
-		X509_NAME				#LcX509NameForeign
+		X509_REQ			#LcX509ReqForeign
+		X509_NAME			#LcX509NameForeign
 	)
