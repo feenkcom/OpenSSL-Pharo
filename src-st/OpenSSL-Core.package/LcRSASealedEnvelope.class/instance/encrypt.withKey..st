@@ -32,9 +32,7 @@ encrypt: aByteArray withKey: anRsaPublicKey
 		with: encryptedKeyBuffer 
 		with: encryptedKeyBufferLength 
 		with: initializationVector 
-		with: (ExternalData 
-					fromHandle: evpPublicKey handle handle 
-					type: ExternalType void asPointerType)
+		with: evpPublicKey handle
 		with: 1.
 	self assert: status equals: 1.
 	
