@@ -1,8 +1,9 @@
 private - API - EVP
 evpDigestUpdate: aByteArray with: mdCtx
-
-	self errorIfZero: 
+	aByteArray pinInMemory.
+	[ self errorIfZero: 
 		(LcLibCrypto current 
 			apiEvpDigestUpdate: mdCtx 
 			with: aByteArray
-			with: aByteArray size)
+			with: aByteArray size) ] ensure: [
+		aByteArray unpinInMemory ]
