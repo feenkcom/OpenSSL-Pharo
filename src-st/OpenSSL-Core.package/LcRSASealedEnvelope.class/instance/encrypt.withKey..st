@@ -32,7 +32,7 @@ encrypt: aByteArray withKey: anRsaPublicKey
 		with: encryptedKeyBuffer 
 		with: encryptedKeyBufferLength 
 		with: initializationVector 
-		with: evpPublicKey handle handle
+		with: evpPublicKey handle
 		with: 1.
 	self assert: status equals: 1.
 	

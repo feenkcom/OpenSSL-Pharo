@@ -1,3 +1,3 @@
 private - accessing
 unix64LibraryName
-	^ 'libcrypto.so.1.1'
+	^ FFIUnix64LibraryFinder findLibrary: 'libcrypto.so'
