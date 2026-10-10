@@ -1,1 +1,1 @@
-SystemOrganization addCategory: #'OpenSSL-EVP'!
+self packageOrganizer ensurePackage: #'OpenSSL-EVP' withTags: #()!
